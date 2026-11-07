@@ -1,0 +1,1009 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مدرسة أصيل | التعليم عن بعد</title>
+  <meta name="description" content="مدرسة أصيل للتعليم عن بعد، تعليم القرآن الكريم واللغة العربية والمواد الدراسية للأطفال داخل المغرب وخارجه.">
+
+  <style>
+    :root {
+      --blue: #174a8b;
+      --orange: #f59b23;
+      --light: #f5f8fc;
+      --dark: #243247;
+      --white: #fff;
+      --green: #159b58;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.8;
+    }
+
+    a { text-decoration: none; }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
+
+    header {
+      background: white;
+      box-shadow: 0 3px 15px #00000010;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      min-height: 75px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      position: relative;
+    }
+
+    .logo {
+      color: var(--blue);
+      font-size: 25px;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    .logo span { color: var(--orange); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: var(--dark);
+      font-size: 13px;
+      font-weight: bold;
+      transition: .3s;
+    }
+
+    .nav-links a:hover { color: var(--orange); }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: none;
+      font-size: 28px;
+      color: var(--blue);
+      cursor: pointer;
+    }
+
+    .whatsapp-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--green);
+      color: white;
+      padding: 8px 13px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #174a8b, #286ab4);
+      color: white;
+      padding: 75px 0;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span { color: #ffc15d; }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 25px;
+      color: #eaf2ff;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 25px;
+      box-shadow: 0 15px 35px #0003;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--orange);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: .3s;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #e68a12;
+    }
+
+    .btn-green { background: var(--green); }
+
+    section {
+      padding: 70px 0;
+      scroll-margin-top: 85px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-title h2 {
+      color: var(--blue);
+      font-size: 30px;
+      margin-bottom: 8px;
+    }
+
+    .section-title p { color: #718096; }
+
+    .about-grid,
+    .features-grid,
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 17px;
+      box-shadow: 0 5px 20px #173c6810;
+      text-align: center;
+      transition: .3s;
+    }
+
+    .card:hover { transform: translateY(-5px); }
+
+    .card .symbol {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .gallery { background: white; }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: .3s;
+    }
+
+    .gallery-grid img:hover { transform: scale(1.025); }
+
+    .subject { border-bottom: 4px solid var(--orange); }
+
+    /* قسم القرآن واللغة العربية للجالية */
+    .diaspora {
+      background: linear-gradient(135deg, #edf5ff, #fff8ec);
+    }
+
+    .diaspora-banner {
+      background: white;
+      border-radius: 24px;
+      padding: 35px;
+      box-shadow: 0 8px 30px #173c6812;
+      text-align: center;
+      border-top: 5px solid var(--orange);
+    }
+
+    .diaspora-banner .big-icon {
+      font-size: 65px;
+      margin-bottom: 12px;
+    }
+
+    .diaspora-banner h3 {
+      color: var(--blue);
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .diaspora-banner p {
+      max-width: 800px;
+      margin: 0 auto 22px;
+    }
+
+    .diaspora-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .diaspora-card {
+      background: white;
+      border-radius: 17px;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 5px 20px #173c6810;
+    }
+
+    .diaspora-card .symbol {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .diaspora-card h3 {
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+
+    .fees-box {
+      max-width: 500px;
+      margin: auto;
+      background: white;
+      text-align: center;
+      padding: 35px;
+      border-radius: 22px;
+      box-shadow: 0 8px 30px #00000012;
+    }
+
+    .price {
+      color: var(--orange);
+      font-size: 42px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    .register { background: #eaf1fa; }
+
+    .form-box {
+      max-width: 650px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px #00000010;
+    }
+
+    .form-box label {
+      display: block;
+      font-weight: bold;
+      margin: 12px 0 5px;
+    }
+
+    .form-box input,
+    .form-box select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d8e0eb;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 15px;
+      outline-color: var(--blue);
+    }
+
+    .form-box button {
+      width: 100%;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    .contact {
+      background: var(--blue);
+      color: white;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .contact p { margin-bottom: 20px; }
+
+    .whatsapp-contact {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      padding: 13px 25px;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #102f57;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 22px;
+      left: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #20bd65;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 5px 18px #0003;
+      z-index: 999;
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { gap: 10px; }
+      .nav-links a { font-size: 12px; }
+      .whatsapp-top { font-size: 11px; }
+    }
+
+    @media (max-width: 760px) {
+      nav { flex-wrap: wrap; padding: 12px 0; }
+
+      .menu-btn { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 65px;
+        right: 0;
+        left: 0;
+        background: white;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 18px;
+        box-shadow: 0 8px 15px #0002;
+        border-radius: 0 0 15px 15px;
+      }
+
+      .nav-links.show { display: flex; }
+      .nav-links a { padding: 7px; font-size: 15px; }
+      .whatsapp-top { margin-right: auto; }
+
+      .hero-content { grid-template-columns: 1fr; }
+      .hero img { height: 250px; }
+
+      .about-grid,
+      .features-grid,
+      .subjects-grid,
+      .gallery-grid,
+      .diaspora-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .about-grid,
+      .features-grid,
+      .subjects-grid,
+      .gallery-grid,
+      .diaspora-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .whatsapp-top {
+        font-size: 10px;
+        padding: 7px 9px;
+      }
+
+      .hero { padding: 45px 0; }
+      .diaspora-banner { padding: 23px 17px; }
+    }
+
+    /* الفصول الافتراضية */
+    .classroom-section { background: linear-gradient(135deg, #edf5ff, #fff8ec); }
+    .classroom-panel { max-width: 900px; margin: auto; background: #fff; padding: 28px;
+      border-radius: 22px; box-shadow: 0 8px 30px #173c6812; }
+    .classroom-form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .classroom-form label { display:block; font-weight:bold; margin-bottom:5px; }
+    .classroom-form input { width:100%; padding:12px; border:1px solid #d8e0eb;
+      border-radius:10px; font:inherit; }
+    .classroom-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+    .classroom-actions button { flex:1; min-width:130px; }
+    .video-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:14px; margin-top:22px; }
+    .video-tile { position:relative; min-height:210px; background:#102f57; border-radius:15px;
+      overflow:hidden; display:flex; align-items:center; justify-content:center; color:#fff; }
+    .video-tile video { width:100%; height:100%; min-height:210px; object-fit:cover; }
+    .video-name { position:absolute; bottom:8px; right:10px; background:#0009; padding:4px 10px;
+      border-radius:20px; font-size:13px; }
+    .classroom-status { margin-top:14px; padding:10px 13px; background:#f3f6fa;
+      border-radius:10px; color:#243247; }
+    .classroom-status.error { background:#fff0f0; color:#a21d1d; }
+    .classroom-note { font-size:13px; color:#64748b; margin-top:12px; }
+    @media(max-width:600px) { .classroom-form { grid-template-columns:1fr; }
+      .classroom-panel { padding:18px; } }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#home" class="logo">مدرسة <span>أصيل</span></a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="فتح القائمة">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">من نحن</a>
+        <a href="#features">مميزاتنا</a>
+        <a href="#gallery">معرض الصور</a>
+        <a href="#subjects">المواد</a>
+        <a href="#quran">القرآن والعربية</a>
+        <a href="#fees">الرسوم</a>
+        <a href="#register">التسجيل</a>
+        <a href="#classroom">الفصول الافتراضية</a>
+        <a href="#contact">اتصل بنا</a>
+      </div>
+
+      <a class="whatsapp-top" href="https://wa.me/212695659888"
+         target="_blank" rel="noopener">
+        🇲🇦 واتساب: +212 695659888
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div>
+        <h1>تعليم متميز لطفلك مع <span>مدرسة أصيل</span></h1>
+        <p>
+          نرافق طفلك في رحلته التعليمية عن بعد، ونساعده على اكتساب
+          المعرفة والثقة بالنفس والأخلاق الحميدة.
+        </p>
+        <a href="#register" class="btn">سجل طفلك الآن</a>
+        <a href="https://wa.me/212695659888" class="btn btn-green"
+           target="_blank" rel="noopener">تواصل معنا</a>
+      </div>
+
+      <img
+        src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b?auto=format&fit=crop&w=1000&q=85"
+        alt="طفل يتعلم عبر الإنترنت">
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>من نحن؟</h2>
+        <p>مدرسة أصيل، تعليم يجمع بين المعرفة والتربية</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="card">
+          <div class="symbol">📚</div>
+          <h3>تعليم هادف</h3>
+          <p>نقدم دروساً تساعد الطفل على الفهم والتعلم والتطور.</p>
+        </div>
+        <div class="card">
+          <div class="symbol">💻</div>
+          <h3>تعلم عن بعد</h3>
+          <p>يتعلم الأطفال من منازلهم عبر الإنترنت في بيئة تعليمية مناسبة.</p>
+        </div>
+        <div class="card">
+          <div class="symbol">❤️</div>
+          <h3>التربية والأخلاق</h3>
+          <p>نركز على بناء أخلاق ولدك إلى جانب مستواه الدراسي.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <div class="section-title">
+        <h2>لماذا تختار مدرسة أصيل؟</h2>
+        <p>نهتم بتعليم طفلك وتطوير قدراته</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="card">
+          <div class="symbol">👩‍🏫</div>
+          <h3>متابعة تعليمية</h3>
+          <p>اهتمام بتقدم الطفل ومساعدته على تحسين مستواه.</p>
+        </div>
+        <div class="card">
+          <div class="symbol">🏡</div>
+          <h3>من المنزل</h3>
+          <p>تعلم مريح دون الحاجة إلى التنقل إلى المدرسة.</p>
+        </div>
+        <div class="card">
+          <div class="symbol">🌟</div>
+          <h3>بناء الشخصية</h3>
+          <p>نشجع على الاحترام والانضباط وحب التعلم.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-title">
+        <h2>معرض الصور</h2>
+        <p>رحلة التعلم والإبداع في مدرسة أصيل</p>
+      </div>
+
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=85" alt="أطفال يتعلمون">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=85" alt="التعلم باستخدام الحاسوب">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=85" alt="بيئة تعليمية">
+        <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=800&q=85" alt="الكتب والقراءة">
+        <img src="https://images.unsplash.com/photo-1584697964358-3e14ca57658b?auto=format&fit=crop&w=900&q=85" alt="طفل يتعلم عبر الإنترنت">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=85" alt="التعليم والتعلم">
+      </div>
+    </div>
+  </section>
+
+  <section id="subjects">
+    <div class="container">
+      <div class="section-title">
+        <h2>المواد الدراسية</h2>
+        <p>مواد أساسية لبناء مستقبل طفلك</p>
+      </div>
+
+      <div class="subjects-grid">
+        <div class="card subject">
+          <div class="symbol">📖</div>
+          <h3>اللغة العربية</h3>
+          <p>القراءة والكتابة والتعبير.</p>
+        </div>
+        <div class="card subject">
+          <div class="symbol">🕌</div>
+          <h3>التربية الإسلامية</h3>
+          <p>القيم والأخلاق والمبادئ الإسلامية.</p>
+        </div>
+        <div class="card subject">
+          <div class="symbol">🇫🇷</div>
+          <h3>اللغة الفرنسية</h3>
+          <p>تعلم أساسيات اللغة الفرنسية.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- القسم الجديد: تعليم القرآن واللغة العربية لأبناء المهجر -->
+  <section class="diaspora" id="quran">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>🌍 تعليم القرآن واللغة العربية لأبناء المهجر</h2>
+        <p>لغتنا هويتنا، والقرآن نور قلوب أبنائنا أينما كانوا</p>
+      </div>
+
+      <div class="diaspora-banner">
+        <div class="big-icon">📖🕌</div>
+        <h3>لأطفال العرب المقيمين خارج البلدان العربية</h3>
+        <p>
+          هل تقيم أسرتك في أوروبا أو أمريكا أو أي بلد آخر؟
+          تساعد مدرسة أصيل أبناء الجالية العربية على تعلم القرآن الكريم
+          واللغة العربية عن بعد، حتى يحافظوا على لغتهم وهويتهم
+          ويتواصلوا مع ثقافتهم العربية والإسلامية.
+        </p>
+        <a href="https://wa.me/212695659888?text=السلام%20عليكم،%20أريد%20الاستفسار%20عن%20تعليم%20القرآن%20واللغة%20العربية%20لأبناء%20المهجر"
+           class="btn btn-green" target="_blank" rel="noopener">
+          استفسر عن دروس أبناء المهجر
+        </a>
+      </div>
+
+      <div class="diaspora-grid">
+
+        <div class="diaspora-card">
+          <div class="symbol">🕋</div>
+          <h3>تعليم القرآن الكريم</h3>
+          <p>
+            تعلم قراءة القرآن الكريم، وحفظ السور،
+            والتدرب على التلاوة الصحيحة وفق مستوى الطفل.
+          </p>
+        </div>
+
+        <div class="diaspora-card">
+          <div class="symbol">🔤</div>
+          <h3>اللغة العربية</h3>
+          <p>
+            تعلم الحروف والقراءة والكتابة والتعبير،
+            وتنمية قدرة الطفل على التحدث باللغة العربية.
+          </p>
+        </div>
+
+        <div class="diaspora-card">
+          <div class="symbol">🌍</div>
+          <h3>تعلم من أي بلد</h3>
+          <p>
+            دروس عن بعد تساعد أبناء الجالية العربية
+            على التعلم من منازلهم أينما كانوا في العالم.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="classroom-section" id="classroom">
+    <div class="container">
+      <div class="section-title">
+        <h2>🎥 الفصول الافتراضية</h2>
+        <p>ادخل إلى حصتك المباشرة بالصوت والصورة مع مدرسة أصيل</p>
+      </div>
+      <div class="classroom-panel">
+        <form id="classroomForm" class="classroom-form">
+          <div>
+            <label for="classroomName">اسمك</label>
+            <input id="classroomName" type="text" maxlength="50" placeholder="اسم الأستاذ أو التلميذ" required>
+          </div>
+          <div>
+            <label for="roomName">رمز الفصل</label>
+            <input id="roomName" type="text" maxlength="60" pattern="[A-Za-z0-9_-]+" placeholder="مثال: aseel-class-01" required>
+          </div>
+          <div>
+            <label for="classroomCode">رمز الدخول الخاص</label>
+            <input id="classroomCode" type="password" maxlength="100" placeholder="أدخل رمز الدخول الذي توفره المدرسة" required>
+          </div>
+          <div style="grid-column:1/-1">
+            <label style="display:flex;align-items:center;gap:8px;font-weight:normal">
+              <input id="audioOnly" type="checkbox" style="width:auto"> الدخول بالصوت فقط
+            </label>
+          </div>
+          <div style="grid-column:1/-1">
+            <button class="btn" id="joinRoomBtn" type="submit">الدخول إلى الفصل</button>
+          </div>
+        </form>
+
+        <div class="classroom-actions" id="classroomControls" hidden>
+          <button class="btn" type="button" id="toggleMicBtn">إيقاف الميكروفون</button>
+          <button class="btn" type="button" id="toggleCamBtn">إيقاف الكاميرا</button>
+          <button class="btn" type="button" id="shareScreenBtn">مشاركة الشاشة</button>
+          <button class="btn btn-green" type="button" id="leaveRoomBtn">مغادرة الفصل</button>
+        </div>
+        <div id="videoGrid" class="video-grid" aria-live="polite"></div>
+        <div id="classroomStatus" class="classroom-status" role="status">أدخل اسمك ورمز الفصل لبدء الاتصال.</div>
+        <p class="classroom-note">
+          تنبيه: يلزم تشغيل الموقع عبر HTTPS، وإعداد خادم LiveKit وملف .env كما هو موضح في دليل التشغيل.
+          لا تشارك رمز الفصل إلا مع المشاركين المقصودين.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="fees">
+    <div class="container">
+      <div class="section-title">
+        <h2>رسوم الدراسة</h2>
+        <p>تعليم متميز بتكلفة شهرية واضحة</p>
+      </div>
+
+      <div class="fees-box">
+        <h3>الاشتراك الشهري</h3>
+        <div class="price">300 درهم</div>
+        <p>للاستفسار عن تفاصيل التسجيل والدراسة، تواصل معنا عبر واتساب.</p>
+        <br>
+        <a href="https://wa.me/212695659888" class="btn btn-green"
+           target="_blank" rel="noopener">استفسر عبر واتساب</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="register" id="register">
+    <div class="container">
+      <div class="section-title">
+        <h2>تسجيل التلاميذ</h2>
+        <p>املأ المعلومات التالية للتواصل مع إدارة المدرسة</p>
+      </div>
+
+      <form class="form-box" id="registrationForm">
+        <label for="parentName">اسم ولي الأمر</label>
+        <input type="text" id="parentName" placeholder="أدخل اسم ولي الأمر" required>
+
+        <label for="childName">اسم الطفل</label>
+        <input type="text" id="childName" placeholder="أدخل اسم الطفل" required>
+
+        <label for="level">المستوى الدراسي</label>
+        <select id="level" required>
+          <option value="">اختر المستوى</option>
+          <option>الروضة</option>
+          <option>الأول ابتدائي</option>
+          <option>الثاني ابتدائي</option>
+          <option>الثالث ابتدائي</option>
+          <option>الرابع ابتدائي</option>
+          <option>الخامس ابتدائي</option>
+          <option>السادس ابتدائي</option>
+        </select>
+
+        <label for="phone">رقم هاتف ولي الأمر</label>
+        <input type="tel" id="phone" placeholder="أدخل رقم الهاتف" required>
+
+        <button type="submit" class="btn">إرسال طلب التسجيل عبر واتساب</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>تواصل مع مدرسة أصيل 🇲🇦</h2>
+      <p>نحن هنا للإجابة عن أسئلتكم واستقبال طلبات التسجيل.</p>
+      <a class="whatsapp-contact"
+         href="https://wa.me/212695659888"
+         target="_blank" rel="noopener">
+        🇲🇦 +212 695659888 | تواصل عبر واتساب
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 مدرسة أصيل - جميع الحقوق محفوظة</p>
+</footer>
+
+<a class="whatsapp-float"
+   href="https://wa.me/212695659888"
+   target="_blank" rel="noopener"
+   aria-label="تواصل معنا عبر واتساب">☏</a>
+
+<script>
+  // فتح وإغلاق قائمة الهاتف
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+
+  menuBtn.addEventListener("click", function () {
+    navLinks.classList.toggle("show");
+  });
+
+  // إغلاق القائمة بعد اختيار أحد الروابط
+  document.querySelectorAll(".nav-links a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      navLinks.classList.remove("show");
+    });
+  });
+
+  // إرسال بيانات التسجيل إلى واتساب
+  document.getElementById("registrationForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const parent = document.getElementById("parentName").value.trim();
+    const child = document.getElementById("childName").value.trim();
+    const level = document.getElementById("level").value;
+    const phone = document.getElementById("phone").value.trim();
+
+    const message =
+      "السلام عليكم، أريد تسجيل طفلي في مدرسة أصيل.\n" +
+      "اسم ولي الأمر: " + parent + "\n" +
+      "اسم الطفل: " + child + "\n" +
+      "المستوى الدراسي: " + level + "\n" +
+      "رقم الهاتف: " + phone;
+
+    const whatsappURL =
+      "https://wa.me/212695659888?text=" + encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+  });
+</script>
+
+
+<script type="module">
+  import { Room, RoomEvent, Track } from "https://unpkg.com/livekit-client/dist/livekit-client.esm.mjs";
+
+  const form = document.getElementById("classroomForm");
+  const nameInput = document.getElementById("classroomName");
+  const roomInput = document.getElementById("roomName");
+  const audioOnlyInput = document.getElementById("audioOnly");
+  const statusBox = document.getElementById("classroomStatus");
+  const videoGrid = document.getElementById("videoGrid");
+  const controls = document.getElementById("classroomControls");
+  const joinBtn = document.getElementById("joinRoomBtn");
+  let room = null;
+  let micEnabled = true;
+  let camEnabled = true;
+  let screenTrack = null;
+
+  function setStatus(message, isError = false) {
+    statusBox.textContent = message;
+    statusBox.classList.toggle("error", isError);
+  }
+
+  function safeId(value) {
+    return value.replace(/[^a-zA-Z0-9_-]/g, "_");
+  }
+
+  function createTile(identity, label) {
+    const id = "tile-" + safeId(identity);
+    let tile = document.getElementById(id);
+    if (!tile) {
+      tile = document.createElement("div");
+      tile.className = "video-tile";
+      tile.id = id;
+      const name = document.createElement("span");
+      name.className = "video-name";
+      name.textContent = label || identity;
+      tile.appendChild(name);
+      videoGrid.appendChild(tile);
+    }
+    return tile;
+  }
+
+  function attachTrack(track, participant) {
+    const tile = createTile(participant.identity, participant.name || participant.identity);
+    const element = track.attach();
+    element.autoplay = true;
+    if (element.tagName === "VIDEO") element.playsInline = true;
+    tile.insertBefore(element, tile.firstChild);
+    const placeholder = tile.querySelector(".video-placeholder");
+    if (placeholder) placeholder.remove();
+  }
+
+  function detachParticipant(participant) {
+    const tile = document.getElementById("tile-" + safeId(participant.identity));
+    if (tile) tile.remove();
+  }
+
+  function bindRoomEvents(activeRoom) {
+    activeRoom.on(RoomEvent.TrackSubscribed, (track, publication, participant) => attachTrack(track, participant));
+    activeRoom.on(RoomEvent.TrackUnsubscribed, (track) => track.detach().forEach(el => el.remove()));
+    activeRoom.on(RoomEvent.ParticipantDisconnected, participant => detachParticipant(participant));
+    activeRoom.on(RoomEvent.Disconnected, () => {
+      setStatus("انقطع الاتصال بالفصل.");
+      controls.hidden = true;
+    });
+    activeRoom.remoteParticipants.forEach(participant => {
+      participant.trackPublications.forEach(publication => {
+        if (publication.isSubscribed && publication.track) attachTrack(publication.track, participant);
+      });
+    });
+  }
+
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (room) return;
+    const identity = nameInput.value.trim();
+    const roomName = roomInput.value.trim();
+    const accessCode = document.getElementById("classroomCode").value;
+    if (!identity || !roomName || !accessCode) return;
+
+    joinBtn.disabled = true;
+    setStatus("جارٍ الاتصال بالفصل...");
+    try {
+      const response = await fetch("/.netlify/functions/get-token", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ identity, room: roomName, accessCode })
+      });
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "تعذر الحصول على رمز الدخول.");
+      if (!data.url || !data.token) throw new Error("استجابة خادم الدخول غير مكتملة.");
+
+      room = new Room({ adaptiveStream: true, dynacast: true });
+      bindRoomEvents(room);
+      await room.connect(data.url, data.token);
+
+      await room.localParticipant.setMicrophoneEnabled(true);
+      micEnabled = true;
+      if (!audioOnlyInput.checked) {
+        await room.localParticipant.setCameraEnabled(true);
+        camEnabled = true;
+      } else {
+        camEnabled = false;
+      }
+
+      const localTile = createTile(room.localParticipant.identity, "أنت: " + identity);
+      room.localParticipant.videoTrackPublications.forEach(pub => {
+        if (pub.track) attachTrack(pub.track, room.localParticipant);
+      });
+      if (!localTile.querySelector("video")) {
+        const placeholder = document.createElement("span");
+        placeholder.className = "video-placeholder";
+        placeholder.textContent = audioOnlyInput.checked ? "دخلت بالصوت فقط" : "جارٍ تشغيل الكاميرا...";
+        localTile.appendChild(placeholder);
+      }
+      controls.hidden = false;
+      setStatus("تم الاتصال بالفصل: " + roomName);
+      document.getElementById("toggleMicBtn").textContent = "إيقاف الميكروفون";
+      document.getElementById("toggleCamBtn").textContent = audioOnlyInput.checked ? "تشغيل الكاميرا" : "إيقاف الكاميرا";
+    } catch (error) {
+      room = null;
+      setStatus(error.message || "حدث خطأ أثناء الاتصال. تحقق من إعداد الخادم والصلاحيات.", true);
+    } finally {
+      joinBtn.disabled = false;
+    }
+  });
+
+  document.getElementById("toggleMicBtn").addEventListener("click", async () => {
+    if (!room) return;
+    micEnabled = !micEnabled;
+    await room.localParticipant.setMicrophoneEnabled(micEnabled);
+    document.getElementById("toggleMicBtn").textContent = micEnabled ? "إيقاف الميكروفون" : "تشغيل الميكروفون";
+  });
+
+  document.getElementById("toggleCamBtn").addEventListener("click", async () => {
+    if (!room) return;
+    camEnabled = !camEnabled;
+    await room.localParticipant.setCameraEnabled(camEnabled);
+    document.getElementById("toggleCamBtn").textContent = camEnabled ? "إيقاف الكاميرا" : "تشغيل الكاميرا";
+    const localTile = document.getElementById("tile-" + safeId(room.localParticipant.identity));
+    if (localTile) {
+      const placeholder = localTile.querySelector(".video-placeholder");
+      if (!camEnabled && !placeholder) {
+        const span = document.createElement("span");
+        span.className = "video-placeholder";
+        span.textContent = "الكاميرا متوقفة";
+        localTile.appendChild(span);
+      } else if (camEnabled && placeholder) placeholder.remove();
+    }
+  });
+
+  document.getElementById("shareScreenBtn").addEventListener("click", async () => {
+    if (!room) return;
+    try {
+      const enabled = !screenTrack;
+      await room.localParticipant.setScreenShareEnabled(enabled);
+      screenTrack = enabled ? true : null;
+      setStatus(enabled ? "تم تشغيل مشاركة الشاشة." : "تم إيقاف مشاركة الشاشة.");
+    } catch (error) {
+      setStatus("تعذرت مشاركة الشاشة: " + (error.message || ""), true);
+    }
+  });
+
+  document.getElementById("leaveRoomBtn").addEventListener("click", async () => {
+    if (room) await room.disconnect();
+    room = null;
+    screenTrack = null;
+    videoGrid.innerHTML = "";
+    controls.hidden = true;
+    setStatus("غادرت الفصل الافتراضي.");
+  });
+</script>
+
+</body>
+</html>
+```
